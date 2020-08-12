@@ -1,6 +1,5 @@
 document.getElementById('submit').addEventListener('click', function (event) {
   let cityInput = document.getElementById('cityInput').value;
-  console.log(cityInput);
 
   let d = new Date();
   let today = d.getDay();
@@ -78,7 +77,7 @@ document.getElementById('submit').addEventListener('click', function (event) {
     })
     .then(data => {
       console.log(data);
-      console.log(data.list[2].weather[0].description)
+
       // HEADER
       document.getElementById('cityCountryName').textContent = `${data.city.name}, ${data.city.country}`;
 
