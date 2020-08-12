@@ -15,14 +15,12 @@ document.getElementById('submit').addEventListener('click', function (event) {
       console.log(data);
       console.log(data.list[2].weather[0].description)
       // HEADER
-      document.getElementById('cityName').textContent = `${data.city.name}`;
       document.getElementById('cityCountryName').textContent = `${data.city.name}, ${data.city.country}`;
-      document.getElementById('date').textContent = data.list[0].dt_txt;
 
       // MAIN DAY INFO
-      document.getElementById('temperature').textContent = `${data.list[0].main.temp}°C`;
+      document.getElementById('temperature').textContent = `${Math.round(data.list[0].main.temp)}°`;
       document.getElementById('description').textContent = `${data.list[0].weather[0].description}`;
-      document.getElementById('weatherIcon').src = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+      document.getElementById('weatherIcon').src = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`;
 
       // MAIN DAY EXTRA
       document.getElementById('windSpeed').textContent = `Wind: ${data.list[0].wind.speed} km/h`;
@@ -53,6 +51,10 @@ document.getElementById('submit').addEventListener('click', function (event) {
 
 let d = new Date();
 let today = d.getDay();
+let thisDay = d.getDate();
+let thisMonth = d.getMonth();
+let thisYear = d.getFullYear();
+console.log(d)
 
 let todayPlusOne = today + 1;
 let todayPlusTwo = today + 2;
@@ -85,7 +87,47 @@ function nameOfDay(day) {
   }
 }
 
-document.getElementById("dayOneName").textContent = nameOfDay(todayPlusOne);
+function nameOfMonth(month) {
+  if (month == 1) {
+    return `January`;
+  } 
+  else if (month == 2) {
+    return `February`;
+  }
+  else if (month == 3) {
+    return `March`;
+  }
+  else if (month == 4) {
+    return `April`;
+  }
+  else if (month == 5) {
+    return `May`;
+  }
+  else if (month == 6) {
+    return `June`;
+  }
+  else if (month == 7) {
+    return `July`;
+  }
+  else if (month == 8) {
+    return `August`;
+  }
+  else if (month == 9) {
+    return `September`;
+  }
+  else if (month == 10) {
+    return `October`;
+  }
+  else if (month == 11) {
+    return `November`;
+  }
+  else if (month == 12) {
+    return `December`;
+  }
+}
+
+document.getElementById('date').textContent = `${nameOfDay(today)}, ${nameOfMonth(thisMonth)} ${thisDay}, ${thisYear}`;
+document.getElementById("dayOneName").textContent = `${nameOfDay(todayPlusOne)}`;
 document.getElementById("dayTwoName").textContent = nameOfDay(todayPlusTwo);
 document.getElementById("dayThreeName").textContent = nameOfDay(todayPlusThree);
 document.getElementById("dayFourName").textContent = nameOfDay(todayPlusFour);
