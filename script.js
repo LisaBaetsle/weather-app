@@ -1,3 +1,4 @@
+
 document.getElementById('submit').addEventListener('click', function (event) {
   let cityInput = document.getElementById('cityInput').value;
 
@@ -91,6 +92,7 @@ document.getElementById('submit').addEventListener('click', function (event) {
       document.getElementById('humidity').textContent = `Humidity: ${data.list[0].main.humidity}%`;
 
       // OTHER DAYS
+      // check the time when city is inputted and change the index of the data to always show the min and max temp of the day and the icon of 12 o'clock
       if (thisHour < 3) {
         //Day one
         document.getElementById('dayOneIcon').src = `http://openweathermap.org/img/wn/${data.list[12].weather[0].icon}@2x.png`;
