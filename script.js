@@ -34,19 +34,59 @@ document.getElementById('submit').addEventListener('click', function (event) {
       document.getElementById('dayOneMinMaxTemp').textContent = `${data.list[8].main.temp_min}°C ${data.list[8].main.temp_max}°C`;
       //Day two
       document.getElementById('dayTwoIcon').src = `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
-      document.getElementById('dayTwoMinMaxTemp').textContent = `${data.list[8].main.temp_min}°C ${data.list[16].main.temp_max}°C`;
+      document.getElementById('dayTwoMinMaxTemp').textContent = `${data.list[16].main.temp_min}°C ${data.list[16].main.temp_max}°C`;
       //Day three
       document.getElementById('dayThreeIcon').src = `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
-      document.getElementById('dayThreeMinMaxTemp').textContent = `${data.list[8].main.temp_min}°C ${data.list[24].main.temp_max}°C`;
+      document.getElementById('dayThreeMinMaxTemp').textContent = `${data.list[24].main.temp_min}°C ${data.list[24].main.temp_max}°C`;
       //Day four
       document.getElementById('dayFourIcon').src = `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
-      document.getElementById('dayFourMinMaxTemp').textContent = `${data.list[8].main.temp_min}°C ${data.list[32].main.temp_max}°C`;
+      document.getElementById('dayFourMinMaxTemp').textContent = `${data.list[32].main.temp_min}°C ${data.list[32].main.temp_max}°C`;
       //Day five
       document.getElementById('dayFiveIcon').src = `http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}@2x.png`;
-      document.getElementById('dayFiveMinMaxTemp').textContent = `${data.list[8].main.temp_min}°C ${data.list[39].main.temp_max}°C`;
+      document.getElementById('dayFiveMinMaxTemp').textContent = `${data.list[39].main.temp_min}°C ${data.list[39].main.temp_max}°C`;
     })
 
 
 
 
 })
+
+let d = new Date();
+let today = d.getDay();
+
+let todayPlusOne = today + 1;
+let todayPlusTwo = today + 2;
+let todayPlusThree = today + 3;
+let todayPlusFour = today + 4;
+let todayPlusFive = today + 5;
+
+
+function nameOfDay(day) {
+  if (day == 1 || day == 8) {
+    return `Monday`;
+  } 
+  else if (day == 2 || day == 9) {
+    return `Tuesday`;
+  }
+  else if (day == 3 || day == 10) {
+    return `Wednesday`;
+  }
+  else if (day == 4 || day == 11) {
+    return `Thursday`;
+  }
+  else if (day == 5 || day == 12) {
+    return `Friday`;
+  }
+  else if (day == 6 || day == 13) {
+    return `Saturday`;
+  }
+  else if (day == 7 || day == 14) {
+    return `Sunday`;
+  }
+}
+
+document.getElementById("dayOneName").textContent = nameOfDay(todayPlusOne);
+document.getElementById("dayTwoName").textContent = nameOfDay(todayPlusTwo);
+document.getElementById("dayThreeName").textContent = nameOfDay(todayPlusThree);
+document.getElementById("dayFourName").textContent = nameOfDay(todayPlusFour);
+document.getElementById("dayFiveName").textContent = nameOfDay(todayPlusFive);

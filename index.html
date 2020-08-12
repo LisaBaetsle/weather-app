@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
   <title>Weather App</title>
 </head>
 
 <body>
-  <h1>Weather App</h1>
-
-  <label for="city">City:</label>
-  <input type="text" id="cityInput" name="cityInput" placeholder="Ghent">
-  <input type="submit" value="Submit" id='submit'>
-
   <div class="container">
+    <h1>Weather App</h1>
+
+    <label for="city">City:</label>
+    <input type="text" id="cityInput" name="cityInput" placeholder="Ghent">
+    <input type="submit" value="Submit" id='submit'>
+
     <div class="header">
       <p id="cityName"></p>
       <p id="cityCountryName"></p>
@@ -28,35 +29,44 @@
       <p id="description"></p>
     </div>
     <div class="mainDayExtra">
-      <p id="windSpeed"></p>
-      <p id="humidity"></p>
+      <div class="row">
+        <div class="col-m-6">
+          <p id="windSpeed"></p>
+        </div>
+        <div class="col-m-6">
+          <p id="humidity"></p>
+        </div>
+      </div>
     </div>
 
     <div class="otherDays">
-      <div class="day" id="dayOne">
-        <p id="dayOneName"></p>
-        <img src="" alt="" id="dayOneIcon">
-        <p id="dayOneMinMaxTemp"></p>
-      </div>
-      <div class="day" id="dayTwo">
-        <p id="dayTwoName"></p>
-        <img src="" alt="" id="dayTwoIcon">
-        <p id="dayTwoMinMaxTemp"></p>
-      </div>
-      <div class="day" id="dayThree">
-        <p id="dayThreeName"></p>
-        <img src="" alt="" id="dayThreeIcon">
-        <p id="dayThreeMinMaxTemp"></p>
-      </div>
-      <div class="day" id="dayFour">
-        <p id="dayFourName"></p>
-        <img src="" alt="" id="dayFourIcon">
-        <p id="dayFourMinMaxTemp"></p>
-      </div>
-      <div class="day" id="dayFive">
-        <p id="dayFiveName"></p>
-        <img src="" alt="" id="dayFiveIcon">
-        <p id="dayFiveMinMaxTemp"></p>
+      <div class="row">
+        <div class="col-m-1"></div>
+        <div class="col-m-2 day" id="dayOne">
+          <p id="dayOneName"></p>
+          <img src="" alt="" id="dayOneIcon">
+          <p id="dayOneMinMaxTemp"></p>
+        </div>
+        <div class="col-m-2 day" id="dayTwo">
+          <p id="dayTwoName"></p>
+          <img src="" alt="" id="dayTwoIcon">
+          <p id="dayTwoMinMaxTemp"></p>
+        </div>
+        <div class="col-m-2 day" id="dayThree">
+          <p id="dayThreeName"></p>
+          <img src="" alt="" id="dayThreeIcon">
+          <p id="dayThreeMinMaxTemp"></p>
+        </div>
+        <div class="col-m-2 day" id="dayFour">
+          <p id="dayFourName"></p>
+          <img src="" alt="" id="dayFourIcon">
+          <p id="dayFourMinMaxTemp"></p>
+        </div>
+        <div class="col-m-2 day" id="dayFive">
+          <p id="dayFiveName"></p>
+          <img src="" alt="" id="dayFiveIcon">
+          <p id="dayFiveMinMaxTemp"></p>
+        </div>
       </div>
     </div>
 
