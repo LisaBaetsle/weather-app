@@ -262,6 +262,7 @@ body {
 #myChart {
   max-width: 700px;
   margin: 60px auto 40px;
+  height: 250px;
 }
 
 .mainDayExtra {
@@ -299,7 +300,7 @@ body {
     width: 60px;
   }
   .mainDayExtra {
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
   .mainDayExtra #windSpeed {
     text-align: right;
@@ -314,6 +315,11 @@ body {
 @media only screen and (min-width: 768px) {
   .iconOtherDays {
     width: 100px;
+  }
+  #myChart {
+    max-width: 700px;
+    margin: -100px auto 60px;
+    height: 350px;
   }
 }
 /*# sourceMappingURL=style.css.map */

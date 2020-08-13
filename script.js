@@ -245,10 +245,11 @@ document.getElementById('submit').addEventListener('click', function (event) {
                 display: false,
                 drawBorder: false,
               },
-              // ticks: {display: false}
               ticks: {
                 min: Math.round(data.list[0].main.temp) - 15,
-                fontColor: 'rgba(255, 255, 255, 0.6)'
+                max: Math.round(data.list[0].main.temp) + 15,
+                fontColor: 'rgba(255, 255, 255, 0.6)',
+                display: false,
               }
             }],
             xAxes: [{
@@ -259,6 +260,20 @@ document.getElementById('submit').addEventListener('click', function (event) {
                 fontColor: 'rgba(255, 255, 255, 0.6)'
               }
             }],
+          },
+          plugins: {
+            datalabels: {
+              color: 'rgba(255, 66, 14, 1)',
+              align: 'top',
+              labels: {
+                title: {
+                  font: {
+                    size: '14',
+                  }
+                }
+              }
+            },
+
           }
         },
       });
