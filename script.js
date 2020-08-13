@@ -1,4 +1,3 @@
-
 document.getElementById('submit').addEventListener('click', function (event) {
   let cityInput = document.getElementById('cityInput').value;
 
@@ -222,9 +221,48 @@ document.getElementById('submit').addEventListener('click', function (event) {
         document.getElementById('dayFiveIcon').src = `http://openweathermap.org/img/wn/${data.list[37].weather[0].icon}@2x.png`;
         document.getElementById('dayFiveMinMaxTemp').textContent = `${Math.round(data.list[34].main.temp_min)}°C ${Math.round(data.list[38].main.temp_max)}°C`;
       }
+
+      // CHART WITH TEMPERATURE
+      let ctx = document.getElementById('myChart');
+      let myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [`${data.list[0].dt_txt.slice(10, 16)}`, `${data.list[1].dt_txt.slice(10, 16)}`, `${data.list[2].dt_txt.slice(10, 16)}`, `${data.list[3].dt_txt.slice(10, 16)}`, `${data.list[4].dt_txt.slice(10, 16)}`, `${data.list[5].dt_txt.slice(10, 16)}`, `${data.list[6].dt_txt.slice(10, 16)}`, `${data.list[7].dt_txt.slice(10, 16)}`, `${data.list[8].dt_txt.slice(10, 16)}`],
+          datasets: [{
+            data: [Math.round(data.list[0].main.temp), Math.round(data.list[1].main.temp), Math.round(data.list[2].main.temp), Math.round(data.list[3].main.temp), Math.round(data.list[4].main.temp), Math.round(data.list[5].main.temp), Math.round(data.list[6].main.temp), Math.round(data.list[7].main.temp), Math.round(data.list[8].main.temp)],
+            backgroundColor: 'rgba(255, 66, 14, 0.7)',
+            borderColor: 'rgba(255, 66, 14, 1)',
+            borderWidth: 1,
+          }, ]
+        },
+        options: {
+          legend: {
+            display: false,
+          },
+          scales: {
+            yAxes: [{
+              gridLines: {
+                display: false,
+                drawBorder: false,
+              },
+              // ticks: {display: false}
+              ticks: {min: Math.round(data.list[0].main.temp) - 15}
+            }],
+            xAxes: [{
+              gridLines: {
+                display: false
+              }
+            }],
+          }
+        },
+      });
     })
-
-
-
-
 })
+
+//submit form when 'Enter' key is pressed while in myInputID
+document.getElementById('cityInput').addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("submit").click();
+  }
+});
