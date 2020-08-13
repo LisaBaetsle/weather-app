@@ -246,11 +246,17 @@ document.getElementById('submit').addEventListener('click', function (event) {
                 drawBorder: false,
               },
               // ticks: {display: false}
-              ticks: {min: Math.round(data.list[0].main.temp) - 15}
+              ticks: {
+                min: Math.round(data.list[0].main.temp) - 15,
+                fontColor: 'rgba(255, 255, 255, 0.6)'
+              }
             }],
             xAxes: [{
               gridLines: {
                 display: false
+              },
+              ticks: {
+                fontColor: 'rgba(255, 255, 255, 0.6)'
               }
             }],
           }
