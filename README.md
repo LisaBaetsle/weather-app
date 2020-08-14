@@ -15,7 +15,7 @@ This weather app shows the weather for the next 5 days. You can input the city y
 
 Made with Visual Studio Code  
 SASS & Vanilla Javascript  
-API: [OpenWeather](https://openweathermap.org/)
+API: [OpenWeather](https://openweathermap.org/)  
 Chart: [Chart.js](https://www.chartjs.org/)
 
 ## Author and Rights
