@@ -74,7 +74,7 @@ body {
   }
 
   #weatherIcon {
-    margin-top: 0;
+    margin-top: -40px;
   }
 
   #description {
@@ -149,7 +149,7 @@ body {
 
   #myChart {
     max-width: 700px;
-    margin: -100px auto 60px;
+    margin: 0 auto 60px;
     height: 350px;
   }
 }
